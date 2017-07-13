@@ -52,6 +52,9 @@ a:hover {
 abbr[title] {
   border-bottom: 1px dotted;
 }
+a .links1{
+  font-size: 25px;
+}
 b,
 strong {
   font-weight: bold;
@@ -5282,6 +5285,7 @@ button.list-group-item {
   width: 100%;
   text-align: left;
 }
+
 .list-group-item.disabled,
 .list-group-item.disabled:hover,
 .list-group-item.disabled:focus {
