@@ -26,3 +26,7 @@ def add():
 @app.route('/myactivities.html')
 def myactivities():
     return render_template("mybucket.html")
+
+@app.route('/viewblist.html')
+def viewblist():
+    return render_template("viewblist.html")
