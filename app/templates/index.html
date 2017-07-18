@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block body %}
-<section>
+<!-- <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -11,9 +11,44 @@
                     <a class="links1" href="viewblist.html">My Bucketlist</a><br><br>
                     <a class="links1" href="Add.html">Add Activities</a>
                     <h6 class="section-heading"></h6>
-                    
+
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+    <div class="container">
+  			<div class="row main">
+  				<div class="main-login main-center">
+          <h1>Create the bucketlist below</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message[1] }}</li>
+
+
+
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form action="" method="post">
+            {{ form.csrf }}
+                </br></br>
+            <div class="input text">
+                {{ form.name.label }} {{ form.name }}
+            </div>
+          </br>
+            <div class="input submit">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+
+
+          </div>
+        </div>
+      </div>
 {% endblock %}

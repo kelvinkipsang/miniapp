@@ -1,11 +1,30 @@
-from flask import render_template
+from flask import render_template,flash, request
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+
 
 from app import app
+class ReusableForm(Form):
+    name = TextField('Name:', validators=[validators.required()])
 
-@app.route('/')
-@app.route('/index.html')
+app.config['SECRET_KEY'] = 'nada'
+
+
+@app.route('/',methods=['GET', 'POST'])
+@app.route('/index.html', methods=['GET', 'POST'])
 def index():
-    return render_template("index.html")
+    form = ReusableForm(request.form)
+    print (form.errors)
+    if request.method == 'POST':
+        name=request.form['name']
+        print (name)
+
+
+        if form.validate():
+            # Save the comment here.
+            flash(name)
+        else:
+            flash('please add an item to the bucketlist. ')
+    return render_template("index.html",form=form)
 
 @app.route('/login.html')
 def login():
