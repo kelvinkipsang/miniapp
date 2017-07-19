@@ -21,19 +21,7 @@
   				<div class="main-login main-center">
           <h1>Create the bucketlist below</h1>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
 
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                        <li>{{ message[1] }}</li>
-
-
-
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
 
         <form action="" method="post">
             {{ form.csrf }}
@@ -49,6 +37,9 @@
 
 
           </div>
+          <br/>
+          
+          <a href="viewblist.html">View bucketlist</a>
         </div>
       </div>
 {% endblock %}

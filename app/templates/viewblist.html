@@ -3,12 +3,34 @@
 {% extends "base.html" %}
 {% block title %}Create Bucket-list{% endblock %}
 {% block body %}
-<h1>My Bucketlist</h1>
-    <li>
+
+<div class="container">
+    <div class="row main">
+      <div class="main-login main-center">
+        <h1>My Bucketlist</h1>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+
+              {% if messages %}
+                  <ul>
+                      {% for message in messages %}
+                          <li>{{ message[1] }}</li>
+
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          {% endwith %}
 
 
+          
 
 
-    </li>
+          <form action="viewblist.html">
+            <input type="submit" value="Delete list" />
+          </form>
+
+</div>
+</div>
+</div>
+
 
 {% endblock %}
