@@ -6,7 +6,7 @@ from app import app
 class ReusableForm(Form):
     name = TextField('Name:', validators=[validators.required()])
 
-app.config['SECRET_KEY'] = 'nada'
+
 
 
 @app.route('/',methods=['GET', 'POST'])
